@@ -1,0 +1,43 @@
+# standup_buzzer
+#A buzzer that reminds(demands) I stand up every 36 minutes for an arduino project
+#
+
+const int buttonPin = 2; //pushbutton timer out
+const int buzzer = 9;  //buzzer out
+
+int buttonState = 0; // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the pushbutton as an input
+  pinMode(buttonPin, INPUT);
+  //Buzzer output initialize pin output
+  pinMode(buzzer, OUTPUT);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);  
+
+  //pressing the button gives me 36.6666
+  if (buttonState == HIGH) {     
+
+    noTone(buzzer);
+    delay(2200000);
+
+  } 
+  else {
+    // turn buzzer on   
+    //make noice 
+    tone(buzzer, 1000);
+    delay(1); 
+   
+
+  }
+}
+
+
+
+
+
+
+
